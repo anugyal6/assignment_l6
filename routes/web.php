@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-    // return "hello"; view function is able to randor the functio
+    // return "hello"; view function is able to randor the function
 });
-// Route:: get('post',function(){
-//     return view('post');
-// });
+Route::get("users",[UsersController::class,'loadView']);
