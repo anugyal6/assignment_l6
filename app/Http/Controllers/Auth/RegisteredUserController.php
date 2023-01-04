@@ -42,6 +42,8 @@ class RegisteredUserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $request->phone, /** variable is coming from register through name attribute */
+            'address' => $request->phone,
             'password' => Hash::make($request->password),
         ]);
 
