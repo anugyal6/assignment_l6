@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     @include('admin.css')
-  </head>
+  </head> 
   <body>
     <div class="container-scroller">
       <div class="row p-0 m-0 proBanner" id="proBanner">
@@ -29,7 +29,34 @@
       <!-- partial -->
      @include('admin.nav')
         <!-- partial -->
-        @include('admin.bodypart')
+        <div class="container-fluid page-body-wrapper">
+            <div class="container" align="center" style="padding-top:120px ">
+                <form>
+                    <div style="padding: 20px;">
+                        <label>Clinician Name: </label>
+                        <input type="text" style="color:green;"name="name" placeholder="Please Enter the name">
+                    </div>
+
+                    <div style="padding: 20px;">
+                        <label>Phone number: </label>
+                        <input type="number" style="color:green;"name="number" placeholder="Please Enter Phone Number">
+                    </div>
+
+                    <div style="padding: 20px;">
+                        <label>Specialist: </label>
+                       <select>
+                        <option value =""></option>
+                        <option value =""></option>
+                        <option value =""></option>
+                       </select>
+                    </div>
+                    <div style="padding: 20px;">
+                        <label>Clinician Name: </label>
+                        <input type="text" style="color:green;"name="name" placeholder="Please Enter the name">
+                    </div>
+                </form>
+            </div>
+        </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>
