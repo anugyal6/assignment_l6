@@ -50,7 +50,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary">One</span>-Health</a>
+        <a class="navbar-brand" href="#"><span class="text-primary">People</span>-Care</a>
 
         <form action="#">
           <div class="input-group input-navbar">
@@ -109,8 +109,8 @@
   <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg.jpg);">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
-        <span class="subhead">Let's make your life happier</span>
-        <h1 class="display-4">Healthy Living</h1>
+        <span class="subhead">Happiness begins with </span>
+        <h1 class="display-4">Good Health</h1>
         <a href="#" class="btn btn-primary">Let's Consult</a>
       </div>
     </div>
@@ -222,7 +222,7 @@
 
       <hr>
 
-      <p id="copyright">Copyright &copy; 2020 <a href="https://macodeid.com/" target="_blank">MACode ID</a>. All right reserved</p>
+      
     </div>
   </footer>
 

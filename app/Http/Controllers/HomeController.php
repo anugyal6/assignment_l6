@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\worker;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,10 @@ else{
             return redirect()-> back();
         }
     }
-    public function index(){
-        return view ('user.home');
+    public function index()
+    {
+        $worker= worker::all();
+        return view ('user.home', compact('worker'));
     }
 }
+

@@ -36,5 +36,9 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth:sanctum', 'verified'])-> get('/dashboard', function(){
     return view('dashboard');
 })->name('dashboard');
-Route::get('/add_worker',[AdminController::class,'uploadview']);
-require __DIR__.'/auth.php';
+
+Route::GET('/add_worker',[AdminController::class,'uploadview']);
+
+
+Route::get('/worker_upload',[AdminController::class,'upload']);
+require __DIR__.'/auth.php'; 

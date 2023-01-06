@@ -3,6 +3,13 @@
 <html lang="en">
   <head>
     @include('admin.css')
+
+    <style type="text/css">
+      label{
+        display: inline-block;
+        width:200px;
+      }
+    </style>
   </head> 
   <body>
     <div class="container-scroller">
@@ -30,30 +37,50 @@
      @include('admin.nav')
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
-            <div class="container" align="center" style="padding-top:120px ">
-                <form>
+          
+        
+        <div class="container"  style="padding-top:120px;  ">
+        @if(session()-> has('message'))
+        <div class="alert alert-sucess">
+          <button type="button" class="close" data-dismiss="alert"></button>
+       {{session()->get('message')}}
+        </div>
+        @endif       
+        <form action="{{url('worker_upload')}}" method="POST" enctype="multipart/form-data"> <!-- This value is necessary if the user will upload a file through the form -->
+                  @csrf
+
+             
                     <div style="padding: 20px;">
                         <label>Clinician Name: </label>
-                        <input type="text" style="color:green;"name="name" placeholder="Please Enter the name">
+                        <input type="text" style="color:green;"name="name" placeholder="Please Enter the name" required="">
                     </div>
 
                     <div style="padding: 20px;">
                         <label>Phone number: </label>
-                        <input type="number" style="color:green;"name="number" placeholder="Please Enter Phone Number">
+                        <input type="number" style="color:green;"name="number" placeholder="Please Enter Phone No" required="">
                     </div>
 
                     <div style="padding: 20px;">
                         <label>Specialist: </label>
-                       <select>
-                        <option value =""></option>
-                        <option value =""></option>
-                        <option value =""></option>
+                       <select name ="specialist" style= "color: grey" required="">
+                       <option >-Select The Option-</option>
+                        <option value ="Cardiology">Cardiology</option>
+                        <option value ="Neuro">Neuro</option>
+                        <option value ="Ent">ENT</option>
+                        <option value ="Dental">Dental</option>
+                        <option value ="GeneralHealth">General Health</option>
                        </select>
                     </div>
+
                     <div style="padding: 20px;">
-                        <label>Clinician Name: </label>
-                        <input type="text" style="color:green;"name="name" placeholder="Please Enter the name">
+                        <label>Doctor Photo: </label>
+                        <input type="file" name="file" required="" >
                     </div>
+
+                    <div style="padding: 20px;">
+                    <input type="submit" class="btn btn-success" >
+                  </div>
+
                 </form>
             </div>
         </div>
