@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
+
 use App\Models\worker;
 
 
@@ -39,11 +40,23 @@ public function consult(Request $request){
    $data->message=$request->message;
    $data->status='In Progress';
 
-   // if(Auth::id()){
-   //     $data->user_id=Auth::user()->id;
-   // }
-   $data->save();
- }
+   if(Auth::id())
+   {
 
+    $data->user_id=Auth::user()->id ;
+   }
+   $data->save();
+   return redirect()->back()->with('message','Congratulations!!! For appointment');
+ }
+public function showcancel(){
+   $data=consult::all();
+   return view ('admin.showapp',compact('data'));
+}
+public function confirm($id){
+   $data = consult::find($id);
+   $data->status='confirm';
+   $data->save();
+   return redirect()->back();
+}
 }  
      

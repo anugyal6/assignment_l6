@@ -64,6 +64,22 @@
               </span>
               <span class="menu-title">Add Doctors</span>
             </a>
+          </li><br>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('showcancel')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Appointment Cancel</span>
+            </a>
+          </li><br>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('UDworker')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Update or Delete Workers</span>
+            </a>
           </li>
         </ul>
       </nav>

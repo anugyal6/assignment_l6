@@ -16,13 +16,14 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/',[HomeController::class,'index']);
 
 Route::get('/home',[HomeController::class,'redirect']);
@@ -40,7 +41,10 @@ Route::middleware(['auth:sanctum', 'verified'])-> get('/dashboard', function(){
 Route::GET('/add_worker',[AdminController::class,'uploadview']);
 
 
+
 Route::POST('/worker_upload',[AdminController::class,'upload']);
 Route::POST('/consult',[AdminController::class,'consult']);
- 
+Route::GET('/appointment',[HomeController::class,'appointment']);
+Route::GET('/showcancel',[AdminController::class,'showcancel']);
+Route::GET('/confirm',[AdminController::class,'confirm']);
 require __DIR__.'/auth.php'; 
