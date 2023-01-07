@@ -40,5 +40,7 @@ Route::middleware(['auth:sanctum', 'verified'])-> get('/dashboard', function(){
 Route::GET('/add_worker',[AdminController::class,'uploadview']);
 
 
-Route::get('/worker_upload',[AdminController::class,'upload']);
+Route::POST('/worker_upload',[AdminController::class,'upload']);
+Route::POST('/consult',[AdminController::class,'consult']);
+ 
 require __DIR__.'/auth.php'; 

@@ -1,9 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use  App\Models\consult;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+
 use App\Models\worker;
+
 
 class AdminController extends Controller
 {
@@ -25,5 +29,21 @@ $worker->name=$request->name;
    $worker-> save();
    return redirect()->back()->with('message','Hello! admin you have added Sucessfully');
 }
+public function consult(Request $request){
+   $data= new consult;
+   $data->name=$request->name;
+   $data->email=$request->email;
+   $data->date=$request->date;
+   $data->phone=$request->number;
+   $data->specialist=$request->departement;
+   $data->message=$request->message;
+   $data->status='In Progress';
+
+   // if(Auth::id()){
+   //     $data->user_id=Auth::user()->id;
+   // }
+   $data->save();
+ }
+
 }  
      
