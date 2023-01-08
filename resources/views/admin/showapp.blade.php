@@ -56,10 +56,10 @@ table, th, td {
     <td>{{$consult->message}}</td>
     <td>{{$consult->status}}</td>
     <td>
-        <a class= "btn btn-primary" href="{{url('confirm', $consult->id)}}">confirm</a>
+        <a class= "btn btn-primary" href="{{url('confirm', $consult->id)}}">Confirm</a>
     </td>
     <td>
-        <a class= "btn btn-danger" href="">cancel</a>
+        <a class= "btn btn-danger" href="{{url('cancel', $consult->id)}}">Cancel</a>
     </td>
 </tr>
 @endforeach

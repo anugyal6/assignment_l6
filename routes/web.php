@@ -46,5 +46,13 @@ Route::POST('/worker_upload',[AdminController::class,'upload']);
 Route::POST('/consult',[AdminController::class,'consult']);
 Route::GET('/appointment',[HomeController::class,'appointment']);
 Route::GET('/showcancel',[AdminController::class,'showcancel']);
-Route::GET('/confirm',[AdminController::class,'confirm']);
+
+Route::GET('/confirm/{id}',[AdminController::class,'confirm']);
+Route::GET('/cancel/{id}',[AdminController::class,'cancel']);
+
+Route::GET('/udworker',[AdminController::class,'Upordel']);
+
+Route::GET('/delete/{id}',[AdminController::class,'delete']);
+Route::GET('/update/{id}',[AdminController::class,'update']);
+Route::get('/change/{id}',[AdminController::class,'change']);
 require __DIR__.'/auth.php'; 

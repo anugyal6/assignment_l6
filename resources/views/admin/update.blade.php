@@ -2,7 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-   <!-- Required meta tags -->
+  <base href= "/public">
+    <style>
+        label{
+            display: inline-block;
+            width: 250px;
+        }
+    </style>
+  
+   Required meta tags
  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>my admin</title>
@@ -48,7 +56,28 @@
       <!-- partial -->
      @include('admin.nav')
         <!-- partial -->
-        @include('admin.bodypart')
+        <div class="container-fluid page-body-wrapper">
+          <div class="container" align="center" style="padding:150px">
+<form action="{{url('change', $data->id)}}" method="get">
+    @csrf
+    <div>
+        <label>Clinical Name:</label>
+        <input type="text" name="name" style="color:red" value="{{$data->name}}">
+    </div><br>
+    <div>
+        <label>Phone Number:</label>
+        <input type="number" name="phoneno" style="color:red" value="{{$data->phoneno}}">
+    </div><br>
+    <div>
+        <label>Specialist:</label>
+        <input type="text" name="Specialist" style="color:red" value="{{$data->Specialist}} ">
+    </div>
+    <div><br>
+        <input type="submit" class= "btn btn-info">
+    </div>
+</form>
+          </div>
+        </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>

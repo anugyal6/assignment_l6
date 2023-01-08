@@ -52,10 +52,43 @@ public function showcancel(){
    $data=consult::all();
    return view ('admin.showapp',compact('data'));
 }
-public function confirm($id){
+public function confirm($id)
+{
    $data = consult::find($id);
-   $data->status='confirm';
+   $data->status='Confirm';
    $data->save();
+   return redirect()->back();
+}
+public function cancel($id)
+{
+   $data = consult::find($id);
+   $data->status='Cancel';
+   $data->save();
+   return redirect()->back();
+}
+public function Upordel(){
+   $data = worker::all();
+   return view('admin.displayWorker' , compact('data'));
+}
+public function delete($id)
+{
+   $data = worker::find($id);
+   $data->delete();
+  
+   return redirect()->back();
+}
+public function update($id)
+{
+  $data =worker::find($id);
+  
+   return view('admin.update' ,compact('data'));
+}
+public function change(Request $request, $id){
+   $worker =  worker::find($id);
+   $worker-> name=$request->name;
+   $worker-> phoneno=$request->phoneno;
+   $worker-> Specialist=$request->Specialist;
+   $worker-> save();
    return redirect()->back();
 }
 }  

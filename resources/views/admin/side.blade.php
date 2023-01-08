@@ -74,7 +74,7 @@
             </a>
           </li><br>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('UDworker')}}">
+            <a class="nav-link" href="{{url('udworker')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-file-document-box"></i>
               </span>

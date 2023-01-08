@@ -2,26 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-   <!-- Required meta tags -->
- <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>my admin</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="admin/assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="admin/assets/vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="admin/assets/vendors/jvectormap/jquery-jvectormap.css">
-    <link rel="stylesheet" href="admin/assets/vendors/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="admin/assets/vendors/owl-carousel-2/owl.carousel.min.css">
-    <link rel="stylesheet" href="admin/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" href="admin/assets/css/style.css">
-    <!-- End layout styles -->
-    <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
+    @include('admin.css')
+    <style>
+table, th, td {
+  border:1px solid wheat;
+}</style>
   </head> 
   <body>
     <div class="container-scroller">
@@ -47,9 +32,31 @@
      @include('admin.side')
       <!-- partial -->
      @include('admin.nav')
-        <!-- partial -->
-        @include('admin.bodypart')
-    <!-- container-scroller -->
+     <div class="container-fluid page-body-wrapper">
+<div align="center" style="padding-top:150px">
+<table  ><tr>
+                <th style="padding:10px" > Name</th>             
+                <th style="padding:10px">Phone</th>
+                <th style="padding:10px">Specialist</th>
+                <th style="padding:10px">Update</th>
+                <th style="padding:10px">Delete</th>
+               
+           
+</tr>
+
+@foreach($data as $worker )
+<tr >
+
+    <td>{{$worker->name}}</td>
+    <td>{{$worker->phoneno}}</td>
+    <td>{{$worker->Specialist}}</td>
+  <td><a class=" btn btn-primary" href="{{url('update', $worker->id)}}">Update</a></td>
+  <td><a class=" btn btn-danger" href="{{url('delete', $worker->id)}}">Delete</a></td>
+   
+</tr>
+@endforeach
+            </div>
+     </div>
     <!-- plugins:js -->
     <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
